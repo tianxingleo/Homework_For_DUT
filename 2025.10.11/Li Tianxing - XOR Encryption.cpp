@@ -12,21 +12,31 @@
 2. 用密钥对密文进行异或运算，得到明文
 3. 输出明文
 
+
+示例：
+请输入明文字符串（二十个字节以内）:13503095512
+请输入密钥字符串（二十个字节以内）:070309
+加密后的密文字符串为（Hex）:01 04 05 03 03 09 39 35 35 31 32 00 00 00 00 00 00 00 00 00 00 
+
+请输入密文字符串（Hex）:01 04 05 03 03 09 39 35 35 31 32 00 00 00 00 00 00 00 00 00 00
+请输入密钥字符串（二十个字节以内）:070309
+解密后的明文字符串为:13503095512
+
 */
 
 #include <stdio.h>
 
 int main(){
 //加密
-    char MiWen[20]={0},Key[21]={0};
-    unsigned char MingWen[20]={0};
-    char MiWen_1[20]={0},Key_1[21]={0};
-    unsigned char MingWen_1[20]={0};
+    char MiWen[21]={0},Key[21]={0};
+    unsigned char MingWen[21]={0}; //unsigned char 避免符号位干扰（做完之后ai提出修改建议不应用char）
+    char MiWen_1[21]={0},Key_1[21]={0};
+    unsigned char MingWen_1[21]={0};
     
     printf("请输入明文字符串（二十个字节以内）:");
-    scanf("%s",MingWen);
+    scanf("%20s",MingWen);  //完成之后问了ai可以完善的地方，%s不安全，应该用%20s限制长度
     printf("请输入密钥字符串（二十个字节以内）:");
-    scanf("%s",Key);
+    scanf("%20s",Key);
     for(int i=0;i<=20;i++){
         MiWen[i]=Key[i]^MingWen[i];
 
@@ -35,17 +45,23 @@ int main(){
     for(int i=0;i<=20;i++){
         printf("%02X ",MiWen[i]);   //这一步是因为发现可能有/0不能用普通 ASCII 文本输出，于网络搜索中发现应用十六进制输出密文
     }
+    printf("\n\n");
 
 //解密
+    printf("请输入密文字符串（Hex）:");
     for(int i=0;i<=20;i++){
         scanf("%X",&MiWen_1[i]);
     }
 
+    printf("请输入密钥字符串（二十个字节以内）:");
+    scanf("%20s",Key_1);
+
     for(int i=0;i<=20;i++){
-        MingWen_1[i]=Key[i]^MiWen_1[i];
+        MingWen_1[i]=Key_1[i]^MiWen_1[i];
 
     }
 
+    printf("解密后的明文字符串为:");
     for(int i=0;i<=20;i++){
         printf("%c",MingWen_1[i]);   
     }
