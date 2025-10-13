@@ -20,7 +20,7 @@ int main(){
     printf("请输入一个整数(0-20):");
     scanf("%d",&a);
     if (a<0||a>20){
-        printf("输入错误，请重新输入");
+        printf("输入错误，请重新输入\n\n");
     }
     else if(a==0){
         printf("%d",a);
@@ -31,7 +31,7 @@ int main(){
             c=c*b;
 
         }
-        printf("%lld",c);
+        printf("%d的阶乘是%lld",a,c);
         break;
     }
 }
