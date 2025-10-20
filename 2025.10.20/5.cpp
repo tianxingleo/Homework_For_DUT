@@ -16,7 +16,7 @@ int main() {
     // TODO：提示输入杨辉三角形的行数n
     printf("请输入杨辉三角形的行数n: ");
     scanf("%d",&n);
-    int yanghui[n+1][n+1]={0};              // 二维数组存储杨辉三角形
+    long long yanghui[n+1][n+1]={0};              // 二维数组存储杨辉三角形，保证可以输出较多行数
 
     // TODO
     for(int a=1;a<=n;a++){//a为行数
@@ -30,8 +30,11 @@ int main() {
     }
 
     for(int a=1;a<=n;a++){//a为行数
+        for(int c=(n+1-a)*4/2.0;c>=1;c--){
+            printf(" ");//计算需要预留的空格数，使杨辉三角居中
+        }
         for(int b=1;b<=a;b++){//b为列数
-            printf("%d ",yanghui[a][b]);
+            printf("%4lld ",yanghui[a][b]); //控制数字宽度
         }
         printf("\n");
     }
