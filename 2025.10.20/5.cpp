@@ -12,6 +12,8 @@
 #include <stdio.h>
 
 int main() {
+
+    
     int n;
     // TODO：提示输入杨辉三角形的行数n
     printf("请输入杨辉三角形的行数n: ");

@@ -1,9 +1,19 @@
 #include <stdio.h>
+#include <windows.h>
 
 int main()
 {
-    // TODO
-    printf("   ¾²   Ò¹        Ë¼\n    [ÌÆ] Àî°×\n\n´°  Ç°  Ã÷  ÔÂ  ¹â£¬\nÒÉ  ËÆ  µØ  ÉÏ  Ëª¡£\n¾Ù  Í·  Íû  Ã÷  ÔÂ£¬\nµÍ  Í·  Ë¼  ¹Ê  Ïç¡£\n");
+    // è®¾ç½®æ§åˆ¶å°ä»£ç é¡µä¸ºUTF-8
+    SetConsoleOutputCP(CP_UTF8);
+    
+    // æ‰“å°æç™½çš„è¯—ã€Šé™å¤œæ€ã€‹
+    printf("   æœˆ   å¤œ        æ€\n");
+    printf("    [å”] æç™½\n");
+    printf("\n");
+    printf("åºŠ  å‰  æ˜  æœˆ  å…‰ï¼Œ\n");
+    printf("ç–‘  æ˜¯  åœ°  ä¸Š  éœœã€‚\n");
+    printf("ä¸¾  å¤´  æœ›  æ˜  æœˆï¼Œ\n");
+    printf("ä½  å¤´  æ€  æ•…  ä¹¡ã€‚\n");
 
     return 0;
 }
