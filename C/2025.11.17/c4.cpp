@@ -11,8 +11,7 @@ typedef struct {
 } Time;
 
 bool isLeapYear(int year) {
-    return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
-}
+    return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)
 
 bool isValidTime(Time *t) {
     if (t->year < 0 || t->month < 1 || t->month > 12 ||
