@@ -1,4 +1,3 @@
-@"
 # 忽略 Visual Studio 的临时文件夹
 .vs/
 .vscode/
@@ -17,4 +16,6 @@ Release/
 *.sdf
 *.opensdf
 *.tlog
-"@ | Out-File -Encoding utf8 .gitignore
+
+# 忽略 repomix 输出
+repomix-output.xml
